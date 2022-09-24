@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { screen } from '@storybook/testing-library';
 
 import { Button } from './Button';
 
@@ -22,6 +23,9 @@ Primary.args = {
   primary: true,
   label: 'Button',
 };
+Primary.play = () => {
+  screen.getByText(/Button/i);
+}
 
 export const Secondary = Template.bind({});
 Secondary.args = {
